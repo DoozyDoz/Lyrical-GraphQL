@@ -8,7 +8,8 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your Mongo Atlas URI
-const MONGO_URI = '';
+const MONGO_URI =
+  'mongodb+srv://mhdsemps:Ch%40ng3m3@cluster0.teclxkt.mongodb.net/lyricaldb?retryWrites=true&w=majority';
 if (!MONGO_URI) {
   throw new Error('You must provide a Mongo Atlas URI');
 }
@@ -26,7 +27,7 @@ app.use(
   '/graphql',
   expressGraphQL({
     schema,
-    graphiql: true
+    graphiql: true,
   })
 );
 
